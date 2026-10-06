@@ -2,7 +2,7 @@
 
 A fast, one-page portfolio for winning Fiverr clients. Built with **Next.js (App Router)** and **Tailwind CSS**. It's fully static (no database) and deploys to Vercel for free.
 
-**Features:** mobile-first layout, dark/light mode, subtle scroll animations (turned off for people who prefer reduced motion), SEO meta tags, an auto-generated social preview image, `sitemap.xml` and `robots.txt`.
+**Features:** mobile-first layout, a Light / Dark switch in the header (visitors pick their mode and it is remembered; until then it follows their device setting), subtle scroll animations (turned off for people who prefer reduced motion), SEO meta tags, an auto-generated social preview image, `sitemap.xml` and `robots.txt`.
 
 ---
 

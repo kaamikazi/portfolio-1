@@ -45,7 +45,7 @@ export function Hero() {
             className="animate-rise mt-7 max-w-xl text-pretty text-lg leading-relaxed text-muted sm:text-xl"
             style={{ "--rise-delay": "160ms" } as React.CSSProperties}
           >
-            I&apos;m {site.name}. I build SaaS MVPs for founders with Next.js, Supabase, Stripe and AI:
+            I&apos;m {site.name} — known as {site.links.fiverrName} on Fiverr. I build SaaS MVPs for founders with Next.js, Supabase, Stripe and AI:
             sign-up, secure data, payments and AI features done properly the first time, so you can launch
             and start learning from real users.
           </p>

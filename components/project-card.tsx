@@ -3,7 +3,8 @@ import { BrandIcon } from "@/components/brand-icon";
 import { ProjectMedia } from "@/components/project-media";
 import { Reveal } from "@/components/reveal";
 import type { Project } from "@/data/projects";
-import { cn } from "@/lib/utils";
+import { WalkthroughButton } from "@/components/walkthrough-button";
+import { cn, isTodo } from "@/lib/utils";
 
 /**
  * One project, shown as a wide card: screenshot on one side, details on the other.
@@ -61,14 +62,18 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             ))}
           </ul>
 
-          {/* Buttons: only shown if the link exists in data/projects.ts */}
+          {/*
+            Buttons. A real live demo link wins; otherwise the walkthrough video is offered.
+            Placeholder ("TODO") links are never shown to visitors.
+          */}
           <div className="mt-8 flex flex-wrap gap-3">
-            {project.liveUrl !== undefined && (
-              <ButtonLink href={project.liveUrl} todoLabel="Live demo soon">
+            {!isTodo(project.liveUrl) && project.liveUrl && (
+              <ButtonLink href={project.liveUrl}>
                 Live demo
                 <ArrowIcon />
               </ButtonLink>
             )}
+            {project.walkthrough && <WalkthroughButton title={project.title} walkthrough={project.walkthrough} />}
             {project.githubUrl !== undefined && (
               <ButtonLink href={project.githubUrl} variant="secondary" todoLabel="Code coming soon">
                 <BrandIcon name="github" />

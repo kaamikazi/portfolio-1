@@ -52,9 +52,17 @@ You should almost never need to touch the components. All the text lives in two 
 
 Labels are kept honest: each project is marked `"Demo"`, `"Personal product"` or `"Client project"`.
 
+### Walkthrough videos
+
+Each project card has a **Watch walkthrough** button that plays a short screen recording in a pop-up. The videos live in `public/walkthroughs/` (an `.mp4`, a `.webm` copy for extra browser support, and a poster image). Point a project at its video with the `walkthrough` field in `data/projects.ts`. When you add a real `liveUrl`, a **Live demo** button appears next to it.
+
+### Fiverr gig links
+
+Each service in `data/site.ts` has a `fiverrGigUrl`. Paste the URL of the matching gig there. Until you do, that service's "Order on Fiverr" button links to your Fiverr profile, so it never breaks.
+
 ### Placeholders (`TODO_...`)
 
-Any value starting with `TODO` counts as "not filled in yet". The site still works: a TODO link becomes a greyed-out "coming soon" button, and a TODO price is simply hidden. Search the `data/` folder for `TODO` to find them all.
+Any value starting with `TODO` counts as "not filled in yet". The site still works: a TODO live-demo link is hidden (the walkthrough is shown instead), a TODO gig link falls back to your profile, and a TODO price is simply hidden. Search the `data/` folder for `TODO` to find them all.
 
 ### Change colors or fonts
 
@@ -105,4 +113,4 @@ public/projects/        Project screenshots
 
 ## About the screenshots
 
-The screenshots in `public/projects/` were taken from the real apps running locally with **sample data** (made-up names and numbers), not real customer data.
+The screenshots in `public/projects/` and the videos in `public/walkthroughs/` were captured from the real apps running locally with **sample data** (made-up names and numbers), not real customer data.

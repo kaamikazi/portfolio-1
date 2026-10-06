@@ -27,14 +27,14 @@ export const site = {
     "I build SaaS MVPs for founders with Next.js, Supabase, Stripe and AI: auth, multi-tenant data, billing and AI features, done properly and shipped fast.",
 
   links: {
-    /** Your Fiverr gig or profile. Swap for your exact gig URL if you prefer. */
+    /** Your Fiverr profile. Used by the main "Hire me" buttons. */
     fiverr: "https://www.fiverr.com/imranahmed847",
-    /** Fiverr display name, shown next to the link. */
+    /** The name clients see on Fiverr. The hero introduces you as "Imran — known as Itto on Fiverr". */
     fiverrName: "Itto",
     github: "https://github.com/kaamikazi",
     githubName: "kaamikazi",
-    /** Your public contact email, e.g. "hello@yourdomain.com". */
-    email: "TODO_EMAIL",
+    /** Your public contact email. */
+    email: "imranahmedromim10@gmail.com",
   },
 };
 
@@ -52,6 +52,11 @@ export type Service = {
   price: string;
   /** e.g. "2–3 weeks". Leave as "TODO_DELIVERY" to hide it. */
   delivery: string;
+  /**
+   * The Fiverr gig for THIS package (copy the URL from your gig page).
+   * While it's still "TODO_FIVERR_GIG_URL", the button links to your Fiverr profile instead.
+   */
+  fiverrGigUrl: string;
   /** Highlight one package to draw the eye. */
   featured?: boolean;
 };
@@ -70,6 +75,7 @@ export const services: Service[] = [
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
+    fiverrGigUrl: "TODO_FIVERR_GIG_URL", // your "SaaS MVP" gig
     featured: true,
   },
   {
@@ -84,6 +90,7 @@ export const services: Service[] = [
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
+    fiverrGigUrl: "TODO_FIVERR_GIG_URL", // your "AI integration" gig
   },
   {
     name: "Stripe billing setup",
@@ -97,6 +104,7 @@ export const services: Service[] = [
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
+    fiverrGigUrl: "TODO_FIVERR_GIG_URL", // your "Stripe billing" gig
   },
 ];
 

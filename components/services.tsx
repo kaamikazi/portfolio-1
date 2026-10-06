@@ -80,8 +80,9 @@ export function Services() {
                   ))}
                 </ul>
 
+                {/* Links to this package's own gig; falls back to the profile until the gig URL is filled in */}
                 <ButtonLink
-                  href={site.links.fiverr}
+                  href={isTodo(service.fiverrGigUrl) ? site.links.fiverr : service.fiverrGigUrl}
                   variant={service.featured ? "primary" : "secondary"}
                   className="mt-8 w-full"
                 >

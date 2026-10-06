@@ -8,6 +8,13 @@
  *   2. Paste it where you want it to appear (the order here = the order on the page).
  *   3. Change the text, links and stack. Save. Done.
  *
+ * Walkthrough videos:
+ *   A short screen recording of the app (60–90 seconds is ideal). Put the .mp4 in
+ *   `public/walkthroughs/` and add:
+ *     walkthrough: { src: "/walkthroughs/my-app.mp4", poster: "/walkthroughs/my-app-poster.webp", duration: "1:10" }
+ *   (Optionally also add `webmSrc` pointing at a .webm copy for extra browser support.)
+ *   The card then shows a "Watch walkthrough" button that plays it in a pop-up.
+ *
  * Placeholders:
  *   Any value that starts with "TODO" is treated as "not filled in yet".
  *   The page will still work: buttons with a TODO link show as a greyed-out
@@ -37,6 +44,18 @@ export type ProjectMedia =
   | { type: "image"; src: string; alt: string }
   | { type: "video"; src: string; poster?: string };
 
+/** A short screen-recorded tour of the app, played in a pop-up. */
+export type Walkthrough = {
+  /** Path to the .mp4 inside /public, e.g. "/walkthroughs/my-app.mp4". Plays in Chrome, Safari and Edge. */
+  src: string;
+  /** Optional .webm copy of the same video, for browsers that can't play .mp4 (e.g. some Linux browsers). */
+  webmSrc?: string;
+  /** Image shown before the video starts (optional). */
+  poster?: string;
+  /** Length shown on the button, e.g. "1:10". */
+  duration: string;
+};
+
 export type Project = {
   /** Short unique id, lowercase with dashes. Used for links and keys. */
   slug: string;
@@ -52,8 +71,13 @@ export type Project = {
   stack: string[];
   /** 3–5 key features. Keep each one short. */
   features: string[];
-  /** Live demo link. Use "TODO_LIVE_URL" until you have one, or delete the line to hide the button. */
+  /**
+   * Live demo link. While it's "TODO_LIVE_URL" (or missing), the button is hidden and
+   * visitors get the walkthrough video instead. Paste a real URL to show "Live demo".
+   */
   liveUrl?: string;
+  /** Screen-recorded walkthrough of the app. See "Walkthrough videos" above. */
+  walkthrough?: Walkthrough;
   /** GitHub repository link. Delete the line to hide the button (e.g. private client code). */
   githubUrl?: string;
   /** Screenshot or video. Leave out to show a placeholder. */
@@ -86,6 +110,13 @@ export const projects: Project[] = [
       src: "/projects/tenantflow.webp",
       alt: "TenantFlow leads page ranking leads by score, with the reason for each score",
     },
+    // Recorded from the real app running locally with sample data.
+    walkthrough: {
+      src: "/walkthroughs/tenantflow.mp4",
+      webmSrc: "/walkthroughs/tenantflow.webm",
+      poster: "/walkthroughs/tenantflow-poster.webp",
+      duration: "1:05",
+    },
   },
 
   // --------------------------------------------------------------------------
@@ -113,6 +144,13 @@ export const projects: Project[] = [
       src: "/projects/breakupos.webp",
       alt: "BreakupOS analytics dashboard with pipeline funnel and vibe breakdown charts",
     },
+    // Recorded from the real app running locally with sample data.
+    walkthrough: {
+      src: "/walkthroughs/breakupos.mp4",
+      webmSrc: "/walkthroughs/breakupos.webm",
+      poster: "/walkthroughs/breakupos-poster.webp",
+      duration: "1:09",
+    },
   },
 
   // --------------------------------------------------------------------------
@@ -134,13 +172,20 @@ export const projects: Project[] = [
       "Automatic Excel workbook sync with protected sheets",
       "One-click backups and safe, validated restore",
     ],
-    // This app runs locally, so there may be no public demo. Delete the next line to hide the button.
+    // This app runs locally, so there may be no public demo; the walkthrough covers it.
     liveUrl: "TODO_LIVE_URL",
     githubUrl: "https://github.com/kaamikazi/Textile",
     media: {
       type: "image",
       src: "/projects/factory-os.webp",
       alt: "Factory OS operations dashboard with production value, profit and machine utilisation",
+    },
+    // Recorded from the real app running locally with sample data.
+    walkthrough: {
+      src: "/walkthroughs/factory-os.mp4",
+      webmSrc: "/walkthroughs/factory-os.webm",
+      poster: "/walkthroughs/factory-os-poster.webp",
+      duration: "1:24",
     },
   },
 ];

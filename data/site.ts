@@ -90,7 +90,7 @@ export const services: Service[] = [
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
-    fiverrGigUrl: "TODO_FIVERR_GIG_URL", // your "AI integration" gig
+    fiverrGigUrl: "https://www.fiverr.com/s/AGGpjPQ", // your "AI integration" gig
   },
   {
     name: "Stripe billing setup",

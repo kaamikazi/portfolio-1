@@ -9,6 +9,7 @@ import {
   siClaude,
   siGithub,
   siGooglegemini,
+  siN8n,
   siNextdotjs,
   siNodedotjs,
   siPostgresql,
@@ -19,6 +20,7 @@ import {
   siTailwindcss,
   siTypescript,
   siVercel,
+  siWhatsapp,
   type SimpleIcon,
 } from "simple-icons";
 
@@ -27,6 +29,7 @@ export const techIcons: Record<string, SimpleIcon> = {
   claude: siClaude,
   github: siGithub,
   gemini: siGooglegemini,
+  n8n: siN8n,
   nextjs: siNextdotjs,
   node: siNodedotjs,
   postgres: siPostgresql,
@@ -37,6 +40,7 @@ export const techIcons: Record<string, SimpleIcon> = {
   tailwind: siTailwindcss,
   typescript: siTypescript,
   vercel: siVercel,
+  whatsapp: siWhatsapp,
 };
 
 /** Renders a brand logo by key. Returns nothing if the key is unknown. */

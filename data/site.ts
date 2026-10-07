@@ -39,12 +39,13 @@ export const site = {
 };
 
 /* --------------------------------------------------------------------------
- * SERVICES — the three packages shown in the "Services" section
+ * SERVICES — one card per Fiverr gig, shown in the "Services" section
+ * To add a gig: copy one block below, change the text and paste its gig link.
  * ------------------------------------------------------------------------ */
 
 export type Service = {
   name: string;
-  /** One line: who this package is for. */
+  /** One line: who this service is for. */
   forWho: string;
   /** What the client receives. */
   includes: string[];
@@ -53,58 +54,74 @@ export type Service = {
   /** e.g. "2–3 weeks". Leave as "TODO_DELIVERY" to hide it. */
   delivery: string;
   /**
-   * The Fiverr gig for THIS package (copy the URL from your gig page).
-   * While it's still "TODO_FIVERR_GIG_URL", the button links to your Fiverr profile instead.
+   * The Fiverr gig for THIS service (the share link from your gig page).
+   * While it's "TODO_FIVERR_GIG_URL", the button links to your Fiverr profile instead.
    */
   fiverrGigUrl: string;
-  /** Highlight one package to draw the eye. */
+  /** Highlight one service to draw the eye. */
   featured?: boolean;
 };
 
 export const services: Service[] = [
   {
+    // Gig: "I will build your saas mvp with nextjs, supabase, stripe and ai"
     name: "SaaS MVP build",
     forWho: "You have an idea and need a real product users can sign up for and pay for.",
     includes: [
       "Next.js app with sign-up, login and user accounts",
       "Supabase database with secure, per-user (or per-team) data access",
       "Your core feature set, scoped together before we start",
-      "Stripe payments or subscriptions if needed",
+      "Stripe payments or subscriptions, plus AI features if needed",
       "Deployed live on Vercel, with full source code in your GitHub",
-      "A short handover doc: how to run, change and deploy it",
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
-    fiverrGigUrl: "TODO_FIVERR_GIG_URL", // your "SaaS MVP" gig
+    fiverrGigUrl: "https://www.fiverr.com/s/p33w4RG",
     featured: true,
   },
   {
-    name: "AI feature integration",
-    forWho: "You already have an app and want AI that's genuinely useful, not a gimmick.",
+    // Gig: "I will build a custom web app, dashboard, or admin panel for your business"
+    name: "Custom web app & dashboards",
+    forWho: "You need a tool to run your business: a dashboard, an admin panel or a custom web app.",
     includes: [
-      "Chat assistant, summaries, extraction or classification with Claude, Gemini or GPT",
-      "AI that only sees the data each user is allowed to see",
-      "Streaming responses and a clean chat or inline UI",
-      "Usage limits per user or plan to protect your API bill",
-      "Prompts and settings you can tweak without a developer",
+      "Dashboards with the charts and numbers you check every day",
+      "Admin panel to manage users, orders or records",
+      "Roles so each person only sees and edits what they should",
+      "CSV or Excel exports for your reports",
+      "Deployed and ready to use, with full source code",
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
-    fiverrGigUrl: "https://www.fiverr.com/s/AGGpjPQ", // your "AI integration" gig
+    fiverrGigUrl: "https://www.fiverr.com/s/AGGpjxB",
   },
   {
-    name: "Stripe billing setup",
-    forWho: "You need to start charging customers without billing bugs.",
+    // Gig: "I will build an ai receptionist chatbot with n8n and whatsapp automation"
+    name: "AI receptionist chatbot",
+    forWho: "You want customers answered on WhatsApp around the clock, without hiring more staff.",
     includes: [
-      "Stripe Checkout and Customer Portal for plans and upgrades",
-      "Webhooks that keep your database in sync with Stripe",
-      "Free vs paid plan limits enforced in your app",
-      "Test-mode walkthrough so you can see every flow before going live",
-      "Clear notes on going live with real payments",
+      "AI assistant trained on your business: services, prices, hours and FAQs",
+      "Connected to WhatsApp so customers chat where they already are",
+      "n8n automations, such as saving leads or alerting you about new enquiries",
+      "Hands the conversation to a person when it should",
+      "Answers you can update yourself, without a developer",
     ],
     price: "TODO_PRICE",
     delivery: "TODO_DELIVERY",
-    fiverrGigUrl: "TODO_FIVERR_GIG_URL", // your "Stripe billing" gig
+    fiverrGigUrl: "https://www.fiverr.com/s/r33da70",
+  },
+  {
+    // Gig: "I will fix react, nextjs typescript supabase and vercel bugs"
+    name: "Bug fixing",
+    forWho: "Your React or Next.js app is broken, throwing errors or won't deploy.",
+    includes: [
+      "React, Next.js and TypeScript errors found and fixed at the root cause",
+      "Supabase auth, database and Row Level Security problems solved",
+      "Vercel build and deployment failures sorted out",
+      "A short note on what was wrong and what changed",
+    ],
+    price: "TODO_PRICE",
+    delivery: "TODO_DELIVERY",
+    fiverrGigUrl: "https://www.fiverr.com/s/zAAr5eo",
   },
 ];
 
@@ -150,6 +167,8 @@ export const techStack: { name: string; icon?: string; group: string }[] = [
   { name: "Claude", icon: "claude", group: "AI" },
   { name: "Gemini", icon: "gemini", group: "AI" },
   { name: "OpenAI", group: "AI" },
+  { name: "n8n", icon: "n8n", group: "Automation" },
+  { name: "WhatsApp", icon: "whatsapp", group: "Automation" },
   { name: "Vercel", icon: "vercel", group: "Deploy" },
   { name: "GitHub", icon: "github", group: "Deploy" },
 ];

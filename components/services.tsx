@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { services, site } from "@/data/site";
 import { cn, isTodo } from "@/lib/utils";
 
-/** "Services" section: the three packages from data/site.ts. */
+/** "Services" section: one card per Fiverr gig, from data/site.ts. */
 export function Services() {
   return (
     <section id="services" className="border-t border-line bg-surface-2/40 py-24 md:py-32">
@@ -17,10 +17,10 @@ export function Services() {
               Pick what you need. <span className="font-serif font-normal italic">Nothing you don&apos;t.</span>
             </>
           }
-          intro="Fixed scope, agreed up front. You own all the code from day one."
+          intro="Each service is a Fiverr gig with a fixed scope, agreed before work starts."
         />
 
-        <ul className="grid gap-5 lg:grid-cols-3">
+        <ul className="grid gap-5 md:grid-cols-2">
           {services.map((service, i) => (
             <Reveal as="li" key={service.name} delay={i * 100} className="flex">
               <div
